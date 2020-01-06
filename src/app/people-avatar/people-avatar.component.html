@@ -1,0 +1,8 @@
+<div class="people__avatar__container">
+    <div class="people__avatar__head" [style.background]="person?.skin_color"
+         [style.borderColor]="person?.hair_color">
+        <div class="people__avatar__eye" [style.backgroundColor]="person?.eye_color"></div>
+        <div class="people__avatar__eye people__avatar__eye--right" [style.backgroundColor]="person?.eye_color"></div>
+    </div>
+    <h1>{{person?.name}}</h1>
+</div>

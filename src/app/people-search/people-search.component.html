@@ -1,0 +1,18 @@
+<div class="search__input__container">
+    <label for="peopleSearch">Search for your favourite Star Wars characters</label>
+    <input id="peopleSearch" type="string" (keypress)="debouncedSearch($event)">
+</div>
+
+
+<div class="search__results__container">
+    <h2 *ngIf="peopleData.length === 0 && hasSearched">Sorry, no results found!</h2>
+    <ng-container *ngFor="let person of peopleData">
+        <app-people-avatar [person]="person"></app-people-avatar>
+    </ng-container>
+</div>
+
+<div class="search__results__pagination__container" *ngIf="peopleData.length > 0">
+    <p class="search__results__pagination__previous" *ngIf="previousPageUrl" (click)="changePage(previousPageUrl)">
+        Previous</p>
+    <p class="search__results__pagination__next" *ngIf="nextPageUrl" (click)="changePage(nextPageUrl)">Next</p>
+</div>
